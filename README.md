@@ -29,18 +29,35 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 <?= \codru\staticmap\StaticMap::widget(
-                                      [
-                                          'mapType' => \codru\staticmap\StaticMap::GOOGLE_MAP,
-                                          'mapOptions' => [
-                                              'center' => '{your coordinates}',
-                                              'zoom' => '13',
-                                              'size' => '640x100',
-                                              'scale' => '2',
-                                              'language' => Yii::$app->language,
-                                              'markers' => [
-                                                   'size' => 'tiny',
-                                                   '{your coordinates}',
-                                              ],
-                                          ],
-                                      ]
-                                      ); ?>```
+        [
+            'mapType' => \codru\staticmap\StaticMap::GOOGLE_MAP,
+            'mapOptions' => [
+                'center' => '40,50',
+                'zoom' => '13',
+                'size' => '640x100',
+                'scale' => '2',
+                'language' => Yii::$app->language,
+                'markers' => [
+                    'size' => 'tiny',
+                    '40,50',
+                ],
+            ],
+        ]
+); ?>```
+Or
+```php
+<?= \codru\staticmap\StaticMap::widget(
+        [
+            'mapType' => \codru\staticmap\StaticMap::OPENSTREET_MAP,
+            'mapOptions' => [
+                'center' => '40,50',
+                'zoom' => '15',
+                'size' => '1024x200',
+                'language' => Yii::$app->language,
+                'markers' => [
+                    '40,50',
+                    'ol-marker',
+                ],
+            ],
+        ]
+    ) ?>```
