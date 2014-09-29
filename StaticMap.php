@@ -20,6 +20,7 @@ class StaticMap extends Widget
 
     public $imageOptions = [];
     public $mapOptions = [];
+    public $mapType;
 
 
     public function init()
@@ -31,10 +32,9 @@ class StaticMap extends Widget
 
     public function prepareUrl()
     {
-        $uriStrategy = $this->imageOptions['mapType'];
-        $uri =  new Uri(new $uriStrategy, $this->imageOptions['mapOptions']);
+        $uriStrategy = 'codru\\staticmap\\' . $this->mapType . 'GeneratingUriStrategy';
+        $uri =  new Uri(new $uriStrategy, $this->mapOptions);
         return $uri->generate();
     }
 
 }
-

@@ -23,7 +23,7 @@ class OpenStreetMapGeneratingUriStrategy implements GeneratingUriStrategy
                     if (!is_numeric($k)) {
                         $url .= $k . ':' . $v . '|';
                     } else {
-                        $url .= $v . '|';
+                        $url .= $v . ',';
                     }
                 }
                 $url = $this->cutLastSymbol($url);
