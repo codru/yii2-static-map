@@ -43,7 +43,8 @@ Once the extension is installed, simply use it in your code by  :
                 ],
             ],
         ]
-); ?>```
+) ?>
+```
 Or
 ```php
 <?= \codru\staticmap\StaticMap::widget(
@@ -60,4 +61,5 @@ Or
                 ],
             ],
         ]
-    ) ?>```
+) ?>
+```
