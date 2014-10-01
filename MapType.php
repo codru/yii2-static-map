@@ -8,8 +8,8 @@
 
 namespace codru\staticmap;
 
-
-interface GeneratingUriStrategy
+/** Implements Strategy pattern */
+interface MapType
 {
-    function generate($mapOptions);
+    function getMapUrl($mapOptions);
 } 

@@ -30,8 +30,8 @@ Once the extension is installed, simply use it in your code by  :
 ```php
 <?= \codru\staticmap\StaticMap::widget(
         [
-            'mapType' => \codru\staticmap\StaticMap::GOOGLE_MAP,
-            'mapOptions' => [
+            'map' => [
+                'class' => \codru\staticmap\types\Google::className(),
                 'center' => '40,50',
                 'zoom' => '13',
                 'size' => '640x100',
@@ -49,8 +49,8 @@ Or
 ```php
 <?= \codru\staticmap\StaticMap::widget(
         [
-            'mapType' => \codru\staticmap\StaticMap::OPENSTREET_MAP,
-            'mapOptions' => [
+            'map' => [
+                'class' => \codru\staticmap\types\OpenStreet::className(),
                 'center' => '40,50',
                 'zoom' => '15',
                 'size' => '1024x200',
