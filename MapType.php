@@ -11,5 +11,5 @@ namespace codru\staticmap;
 /** Implements Strategy pattern */
 interface MapType
 {
-    function getMapUrl($mapOptions);
+    function getMapUrl($options);
 } 
