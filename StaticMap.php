@@ -8,39 +8,25 @@
 
 namespace codru\staticmap;
 
-
+use Yii;
 use yii\base\Widget;
 use yii\base\Exception;
 use yii\helpers\Html;
 
-
-/**
- * Implements Strategy pattern
- * Uses $map['class'] to define strategy class
- */
 class StaticMap extends Widget
 {
 
     public $imageOptions = [];
     public $map = [];
 
-
-    public function init()
+    public function run()
     {
-        parent::init();
-
-        if (!isset($this->map['class'])) {
-            throw new Exception('You should define a class for generating map');
-        }
-
         echo Html::img($this->prepareUrl(), $this->imageOptions);
     }
 
     public function prepareUrl()
     {
-        $mapType = $this->map['class'];
-        unset($this->map['class']);
-        return (new $mapType)->getMapUrl($this->map);
+        return Yii::createObject($this->map)->getMapUrl();
     }
 
 }

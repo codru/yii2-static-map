@@ -11,15 +11,21 @@ namespace codru\staticmap\types;
 use codru\staticmap\MapType;
 use yii\base\Object;
 
-/** Implements Strategy pattern */
 class Google extends Object implements MapType
 {
     const GOOGLE_MAP_URI = 'http://maps.googleapis.com/maps/api/staticmap?';
 
-    function getMapUrl($mapOptions)
+    public $center;
+    public $zoom;
+    public $size;
+    public $scale;
+    public $language;
+    public $markers = [];
+
+    function getMapUrl()
     {
         $url = static::GOOGLE_MAP_URI;
-        foreach ($mapOptions as $key => $value) {
+        foreach (get_object_vars($this) as $key => $value) {
             if (is_array($value)) {
                 $url .= $key . '=';
                 foreach ($value as $k => $v) {
