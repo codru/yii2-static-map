@@ -21,12 +21,9 @@ class StaticMap extends Widget
 
     public function run()
     {
-        echo Html::img($this->prepareUrl(), $this->imageOptions);
+        echo Html::img(
+            Yii::createObject($this->map)->getMapUrl(),
+            $this->imageOptions
+        );
     }
-
-    public function prepareUrl()
-    {
-        return Yii::createObject($this->map)->getMapUrl();
-    }
-
 }

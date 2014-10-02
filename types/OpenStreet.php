@@ -15,17 +15,12 @@ class OpenStreet extends Object implements MapType
 {
     const OPENSTREET_MAP_URI = 'http://staticmap.openstreetmap.de/staticmap.php?';
 
-    public $center;
-    public $zoom;
-    public $size;
-    public $scale;
-    public $language;
-    public $markers = [];
+    public $options;
 
     function getMapUrl()
     {
         $url = static::OPENSTREET_MAP_URI;
-        foreach (get_object_vars($this) as $key => $value) {
+        foreach ($this->options as $key => $value) {
             if (is_array($value)) {
                 $url .= $key . '=';
                 foreach ($value as $k => $v) {

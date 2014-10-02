@@ -15,17 +15,12 @@ class Google extends Object implements MapType
 {
     const GOOGLE_MAP_URI = 'http://maps.googleapis.com/maps/api/staticmap?';
 
-    public $center;
-    public $zoom;
-    public $size;
-    public $scale;
-    public $language;
-    public $markers = [];
+    public $options;
 
     function getMapUrl()
     {
         $url = static::GOOGLE_MAP_URI;
-        foreach (get_object_vars($this) as $key => $value) {
+        foreach ($this->options as $key => $value) {
             if (is_array($value)) {
                 $url .= $key . '=';
                 foreach ($value as $k => $v) {

@@ -32,14 +32,16 @@ Once the extension is installed, simply use it in your code by  :
         [
             'map' => [
                 'class' => \codru\staticmap\types\Google::className(),
-                'center' => '40,50',
-                'zoom' => '13',
-                'size' => '640x100',
-                'scale' => '2',
-                'language' => Yii::$app->language,
-                'markers' => [
-                    'size' => 'tiny',
-                    '40,50',
+                'options' => [
+                    'center' => '40,50',
+                    'zoom' => '13',
+                    'size' => '640x100',
+                    'scale' => '2',
+                    'language' => Yii::$app->language,
+                    'markers' => [
+                        'size' => 'tiny',
+                        '40,50',
+                    ],
                 ],
             ],
         ]
@@ -51,13 +53,15 @@ Or
         [
             'map' => [
                 'class' => \codru\staticmap\types\OpenStreet::className(),
-                'center' => '40,50',
-                'zoom' => '15',
-                'size' => '1024x200',
-                'language' => Yii::$app->language,
-                'markers' => [
-                    '40,50',
-                    'ol-marker',
+                'options' => [
+                    'center' => '40,50',
+                    'zoom' => '15',
+                    'size' => '1024x200',
+                    'language' => Yii::$app->language,
+                    'markers' => [
+                        '40,50',
+                        'ol-marker',
+                    ],
                 ],
             ],
         ]
