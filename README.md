@@ -1,6 +1,6 @@
 Yii2 Static Map
 ===============
-[![Build Status](https://secure.travis-ci.org/yiisoft/yii2.png)](http://travis-ci.org/yiisoft/yii2)
+[![Build Status](https://travis-ci.org/codru/yii2-static-map.svg?branch=master)](https://travis-ci.org/codru/yii2-static-map)
 Extension for generating static maps (for example for contacts page). Now support google map and openstreet map
 
 Installation
