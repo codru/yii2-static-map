@@ -19,7 +19,6 @@ class GoogleTest extends \yii\codeception\TestCase
                 'zoom' => '13',
                 'size' => '640x100',
                 'scale' => '2',
-                'language' => Yii::$app->language,
                 'markers' => [
                     'size' => 'tiny',
                     '40,50',
@@ -27,7 +26,7 @@ class GoogleTest extends \yii\codeception\TestCase
             ],
         ];
         $this->assertEquals(
-            'http://maps.googleapis.com/maps/api/staticmap?center=40,50&zoom=13&size=640x100&scale=2&language=en&markers=size:tiny|40,5',
+            'http://maps.googleapis.com/maps/api/staticmap?center=40,50&zoom=13&size=640x100&scale=2&markers=size:tiny|40,5',
             Yii::createObject($map)->getMapUrl()
         );
     }

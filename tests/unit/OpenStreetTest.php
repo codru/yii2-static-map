@@ -18,7 +18,6 @@ class OpenStreetTest extends \yii\codeception\TestCase
                 'center' => '40,50',
                 'zoom' => '15',
                 'size' => '1024x200',
-                'language' => Yii::$app->language,
                 'markers' => [
                     '40,50',
                     'ol-marker',
@@ -26,7 +25,7 @@ class OpenStreetTest extends \yii\codeception\TestCase
             ],
         ];
         $this->assertEquals(
-            'http://staticmap.openstreetmap.de/staticmap.php?center=40,50&zoom=15&size=1024x200&language=en&markers=40,50,ol-marke',
+            'http://staticmap.openstreetmap.de/staticmap.php?center=40,50&zoom=15&size=1024x200&markers=40,50,ol-marke',
             Yii::createObject($map)->getMapUrl()
         );
     }
