@@ -1,7 +1,6 @@
 # IDE
 /.idea
 
-composer.lock
 vendor
 tests/_log/*
 tests/_runtime/*
