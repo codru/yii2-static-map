@@ -15,4 +15,5 @@ install:
   - composer install
 
 script:
+  - codecept build
   - codecept run
