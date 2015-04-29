@@ -17,7 +17,7 @@ class Google extends Object implements MapType
 
     public $options;
 
-    function getMapUrl()
+    public function getMapUrl()
     {
         $url = static::GOOGLE_MAP_URI;
         foreach ($this->options as $key => $value) {

@@ -17,7 +17,7 @@ class OpenStreet extends Object implements MapType
 
     public $options;
 
-    function getMapUrl()
+    public function getMapUrl()
     {
         $url = static::OPENSTREET_MAP_URI;
         foreach ($this->options as $key => $value) {
