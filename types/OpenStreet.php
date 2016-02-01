@@ -41,6 +41,6 @@ class OpenStreet extends Object implements MapType
 
     private function cutLastSymbol($str)
     {
-        return substr($str, 0, strlen($str) - 1);
+        return substr($str, 0, -1);
     }
 }
